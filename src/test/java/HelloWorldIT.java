@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -9,12 +8,12 @@ import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-public class HelloWorldIntegrationTest {
+public class HelloWorldIT {
 
     @Test
     public void test() throws FailingHttpStatusCodeException, MalformedURLException, IOException {
         final WebClient webClient = new WebClient();
-        final HtmlPage page = webClient.getPage("http://localhost/cds-webapp/index.html");
+        final HtmlPage page = webClient.getPage("http://localhost:8080/cds-webapp/index.jsp");
         Assert.assertEquals("Hello World - Title", page.getTitleText());
 
         final String pageAsXml = page.asXml();
