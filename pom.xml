@@ -113,6 +113,7 @@
 		</profile>
 	</profiles>
 
+    <!-- Das Distribution Management hier wird ersetzt durch das Component Repository Artifactory
 	<distributionManagement>
 		<repository>
 			<id>cds-app-repo</id>
@@ -123,5 +124,6 @@
 			<url>file:d:/eclipse/workspaces/testing/cds-app-remote-snapshot-repo/</url>
 		</snapshotRepository>
 	</distributionManagement>
+    -->
 
 </project>
