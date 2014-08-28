@@ -13,7 +13,7 @@ public class HelloWorldIT {
     @Test
     public void test() throws FailingHttpStatusCodeException, MalformedURLException, IOException {
         final WebClient webClient = new WebClient();
-        final HtmlPage page = webClient.getPage("http://localhost:8080/cds-webapp");
+        final HtmlPage page = webClient.getPage("http://localhost:8080/cds-webapp/");
         Assert.assertEquals("Hello World - Title", page.getTitleText());
 
         final String pageAsXml = page.asXml();
@@ -21,6 +21,7 @@ public class HelloWorldIT {
 
         final String pageAsText = page.asText();
         Assert.assertTrue(pageAsText.contains("Hello World!"));
+        Assert.assertTrue(pageAsText.contains("Aufgerufene URL: http://localhost:8080/cds-webapp/"));
 
         webClient.closeAllWindows();
     }
